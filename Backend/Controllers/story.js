@@ -40,7 +40,7 @@ const addStory = asyncErrorWrapper(async  (req,res,next)=> {
 
 const getAllStories = asyncErrorWrapper( async (req,res,next) =>{
 
-    let query = Story.find();
+    let query = Story.find(); //accepted:true
 
     query =searchHelper("title",query,req)
 
@@ -185,7 +185,7 @@ const deleteStory  =asyncErrorWrapper(async(req,res,next)=>{
 })
 
 
-module.exports ={
+module.exports = {
     addStory,
     getAllStories,
     detailStory,

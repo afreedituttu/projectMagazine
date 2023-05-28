@@ -8,7 +8,7 @@ const checkStoryExist = asyncErrorWrapper(async (req,res,next) => {
     const {slug} = req.params  ;
     const story = await Story.findOne({
       slug : slug
-    })
+    }) //accepted:true
 
     if(!story) {
         return next(new CustomError("There is no such story with that slug ",400))
@@ -26,7 +26,7 @@ const checkUserAndStoryExist = asyncErrorWrapper(async(req, res, next) => {
     const story = await Story.findOne({
         slug : slug ,
         author :req.user 
-    })
+    }) // accepted:true
 
     if (!story ) {
         return next(new CustomError("There is no story with that slug associated with User ",400))

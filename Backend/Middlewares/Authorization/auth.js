@@ -30,6 +30,10 @@ const getAccessToRoute = asyncErrorWrapper(async(req,res,next) =>{
 
 })
 
+const getAccessToAdminRoute = asyncErrorWrapper((req, res, next)=>{
+    //
+})
 
 
-module.exports ={getAccessToRoute}
+
+module.exports ={getAccessToRoute, getAccessToAdminRoute}

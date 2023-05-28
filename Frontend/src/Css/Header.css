@@ -68,10 +68,16 @@ header .logo h5 {
     display: flex;
     align-items: center;
 }
+.logoutLogo{
+    display: inline-block;
+}
 
 @media only screen and (max-width: 1030px) {
     header .averager {
         padding: 0 1rem;
+    }
+    .logoutLogo{
+        display: none;
     }
 
     .search-form {
@@ -207,4 +213,15 @@ header .logo h5 {
     width: 24px;
     height: 24px;
     text-align: center;
+}
+.custom-btn{
+    background: #fff;
+    color: #0063a5 !important;
+    border: #0063a5 solid 2px;
+    padding: 4px 10px !important;
+    margin-right: 2rem;
+    border-radius: 4px;
+    margin-top: 7px;
+    font-weight: 600;
+    font-size: 1.2rem;
 }

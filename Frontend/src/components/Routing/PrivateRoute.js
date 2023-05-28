@@ -5,7 +5,7 @@ import axios from 'axios';
 import { AuthContext } from "../../Context/AuthContext";
 
 const PrivateRoute =( ) => {
-    const bool =localStorage.getItem("authToken") ? true :false
+    const bool = localStorage.getItem("authToken") ? true :false
     const [auth ,setAuth] =useState(bool)
     const [error ,setError] =useState("")
     const navigate = useNavigate()

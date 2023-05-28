@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../Css/Register.css"
+
 const RegisterScreen = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -68,7 +69,7 @@ const RegisterScreen = () => {
           </div>
 
           <div className="top-register-explain">
-            <h2>Welcome to MERN Blog </h2>
+            <h2>Welcome to E-ZINE </h2>
 
             <p>
               It's easy and free to post your thinking on any topic and connect with thounsands of readers.

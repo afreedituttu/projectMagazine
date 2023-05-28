@@ -10,6 +10,10 @@ const StorySchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
+    // accepted:{
+    //     type:Boolean,
+    //     default:false
+    // },
     slug: String,
     title: {
         type: String,

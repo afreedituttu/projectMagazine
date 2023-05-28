@@ -10,7 +10,7 @@ import { FaRegComment } from 'react-icons/fa'
 import { BsBookmarkPlus, BsThreeDots, BsBookmarkFill } from 'react-icons/bs'
 import CommentSidebar from '../CommentScreens/CommentSidebar';
 
-const DetailStory = ({admin}) => {
+const AdminDetail = ({admin}) => {
   const [likeStatus, setLikeStatus] = useState(false)
   const [likeCount, setLikeCount] = useState(0)
   const [activeUser, setActiveUser] = useState({})
@@ -164,7 +164,7 @@ const DetailStory = ({admin}) => {
             <div className='Inclusive-detailStory-page'>
 
               <div className="top_detail_wrapper">
-                <Link to={'/'} >
+                <Link to={'/admin'} >
                   <FiArrowLeft />
                 </Link>
                 <h5>{story.title}</h5>
@@ -191,25 +191,6 @@ const DetailStory = ({admin}) => {
                     </li>
 
                   </ul>
-
-                  {
-                    !activeUser.username &&
-                    <div className='comment-info-wrap'>
-
-                      <i onClick={(prev) => {
-                        setSidebarShowStatus(!sidebarShowStatus)
-                      }}>
-                        <FaRegComment />
-                      </i>
-
-
-                      <b className='commentCount'>{story.commentCount}</b>
-
-                    </div>
-                  }
-
-                  {activeUser && story.author &&
-                    story.author._id === activeUser._id ?
                     <div className="top_story_transactions">
                       <Link className='editStoryLink' to={`/story/${story.slug}/edit`}>
                         <FiEdit />
@@ -217,8 +198,7 @@ const DetailStory = ({admin}) => {
                       <span className='deleteStoryLink' onClick={handleDelete}>
                         <RiDeleteBin6Line />
                       </span>
-                    </div> : null
-                  }
+                    </div>
                 </div>
 
               </div>
@@ -318,4 +298,4 @@ const DetailStory = ({admin}) => {
   )
 }
 
-export default DetailStory;
+export default AdminDetail;

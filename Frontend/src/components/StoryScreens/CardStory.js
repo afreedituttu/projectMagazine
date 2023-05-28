@@ -1,7 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { styled } from 'styled-components';
 
-const Story = ({ story }) => {
+const ButtonContainer = styled.div`
+    display:flex;
+    width:100%;
+    justify-content:space-around;
+`
+const Button = styled.button`
+    flex:1;
+    background-color:#${(props)=>{return props.bg}};
+    color: #fff;
+    padding:7px 0px;
+    font-size:1.2rem;
+    font-weight:500;
+`
+
+const Story = ({ story, admin }) => {
 
     const editDate = (createdAt) => {
         const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -24,7 +39,10 @@ const Story = ({ story }) => {
     return (
 
         <div className="story-card">
-            <Link to={`/story/${story.slug}`} className="story-link">
+            <Link 
+            to={admin?`/admin/detail/${story.slug}`:`/story/${story.slug}`} 
+            className="story-link"
+            >
 
                 <img className=" story-image" src={`/storyImages/${story.image}`} alt={story.title} />
                 <div className="story-content-wrapper">
@@ -43,6 +61,14 @@ const Story = ({ story }) => {
                     </p>
                 </div>
             </Link>
+            {admin?
+            <ButtonContainer>
+                <Button bg="33d04a" >Accept</Button>
+                <Button bg="d03333" >Reject</Button>
+            </ButtonContainer>
+            :
+            <></>
+            }
         </div>
 
     )

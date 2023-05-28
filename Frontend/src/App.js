@@ -16,6 +16,11 @@ import ChangePassword from './components/ProfileScreens/ChangePassword';
 import NotFound from './components/GeneralScreens/NotFound';
 import EditStory from './components/StoryScreens/EditStory';
 import ReadListPage from './components/ProfileScreens/ReadListPage';
+import AdminHome from './components/Admin/Home'
+import AdminLogin from './components/Admin/Login'
+import AdminHeader from './components/Admin/AdminHeader'
+import AdminFooter from './components/Admin/AdminFooter'
+import AdminDetail from './components/Admin/AdminDetail';
 
 const App = () => {
 
@@ -79,6 +84,15 @@ const App = () => {
 
                               <Route exact path="/resetpassword" element={<ResetPasswordScreen />} />
 
+                              <Route path='/admin' element={<AdminLayout />}>
+
+                                    <Route exact path='/admin' element={<AdminHome />} />
+
+                                    <Route exact path='/admin/login' element={<AdminLogin />} />
+
+                                    <Route exact path='/admin/detail/:slug' element={<AdminDetail />} />
+
+                              </Route>
 
                         </Routes>
 
@@ -98,6 +112,13 @@ const LayoutsWithHeader = () => {
                   <Footer />
             </>
       );
+}
+const AdminLayout = ()=>{
+      return(<>
+            <AdminHeader />
+            <Outlet />
+            <AdminFooter />
+      </>)
 }
 
 export default App;
