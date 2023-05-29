@@ -39,6 +39,7 @@ const App = () => {
                                     </Route>
 
                                     <Route exact path="/story/:slug" element={<DetailStory />} />
+                                    <Route exact path="/story/:slug/admin" element={<DetailStory admin="true" />} />
 
                                     <Route exact path='/addstory' element={<PrivateRoute />}>
                                           <Route exact path='/addstory' element={<AddStory />} />

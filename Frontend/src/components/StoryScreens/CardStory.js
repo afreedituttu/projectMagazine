@@ -40,7 +40,7 @@ const Story = ({ story, admin }) => {
 
         <div className="story-card">
             <Link 
-            to={admin?`/admin/detail/${story.slug}`:`/story/${story.slug}`} 
+            to={admin?`/story/${story.slug}/admin`:`/story/${story.slug}`}
             className="story-link"
             >
 

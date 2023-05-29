@@ -115,7 +115,11 @@ const DetailStory = ({admin}) => {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         })
-        navigate("/")
+        if(admin){
+          navigate("/admin");
+        }else{
+          navigate('/');
+        }
 
       }
       catch (error) {
@@ -209,7 +213,7 @@ const DetailStory = ({admin}) => {
                   }
 
                   {activeUser && story.author &&
-                    story.author._id === activeUser._id ?
+                    story.author._id === activeUser._id || admin ?
                     <div className="top_story_transactions">
                       <Link className='editStoryLink' to={`/story/${story.slug}/edit`}>
                         <FiEdit />

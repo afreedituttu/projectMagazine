@@ -17,16 +17,20 @@ const AdminHome = () => {
   const navigate = useNavigate()
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
-
+  const [Fetch, setFetch] = useState(true);
 
   useEffect(() => {
     const getStories = async () => {
 
       setLoading(true)
       try {
-
-        const { data } = await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}`)
-
+        let serverData;
+        if(Fetch){
+        serverData = await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}&admin=true`)
+      }else{
+        serverData= await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}`)
+        }
+        const { data } = serverData;
         setStories(data.data)
         setPages(data.pages)
 
@@ -37,7 +41,7 @@ const AdminHome = () => {
       }
     }
     getStories()
-  }, [setLoading, search, page, navigate])
+  }, [setLoading, search, page, navigate, Fetch])
 
 
   useEffect(() => {
@@ -61,6 +65,23 @@ const AdminHome = () => {
 
         :
         <div>
+          <select onChange={(e)=>{
+            setFetch(!Fetch)
+            }}
+          
+          >
+            {Fetch?
+            <>
+            <option selected value="pending">Pending</option>
+            <option value="all">all</option>
+            </>
+            :
+            <>
+            <option value="pending">Pending</option>
+            <option selected value="all">all</option>
+            </>
+            }
+          </select>
           <div className="story-card-wrapper">
             {stories.length !== 0 ?
               stories.map((story) => {

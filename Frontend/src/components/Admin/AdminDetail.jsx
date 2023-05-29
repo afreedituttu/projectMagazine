@@ -115,7 +115,7 @@ const AdminDetail = ({admin}) => {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         })
-        navigate("/")
+        navigate("/admin")
 
       }
       catch (error) {
