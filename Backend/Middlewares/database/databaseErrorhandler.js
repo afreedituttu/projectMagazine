@@ -21,11 +21,17 @@ next() ;
 const checkUserAndStoryExist = asyncErrorWrapper(async(req, res, next) => {
 
 const {slug} =req.params 
-
-const story = await Story.findOne({
-    slug : slug ,
-    author :req.user 
-})
+let story;
+if(req.user.role == "admin"){
+    story = await Story.findOne({
+        slug : slug ,
+    })
+}else{
+    story = await Story.findOne({
+        slug : slug ,
+        author :req.user 
+    })  
+}
 
 if (!story ) {
     return next(new CustomError("There is no story with that slug associated with User ",400))

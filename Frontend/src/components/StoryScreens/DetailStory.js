@@ -288,6 +288,7 @@ const DetailStory = ({admin}) => {
                         {storyReadListStatus ? <BsBookmarkFill color='#0205b1' /> :
                           <BsBookmarkPlus />
                         }
+                        
                       </i>
                     </li>
 

@@ -124,7 +124,7 @@ const likeStory =asyncErrorWrapper(async(req,res,next)=>{
 
 })
 
-const editStoryPage  =asyncErrorWrapper(async(req,res,next)=>{
+const editStoryPage  = asyncErrorWrapper(async(req,res,next)=>{
     const {slug } = req.params ; 
    
     const story = await Story.findOne({
@@ -141,16 +141,26 @@ const editStoryPage  =asyncErrorWrapper(async(req,res,next)=>{
 
 
 const editStory  =asyncErrorWrapper(async(req,res,next)=>{
-    const {slug } = req.params ; 
-    const {title ,content ,image ,previousImage } = req.body;
+    const {slug, admin } = req.params ; 
+    console.log('imhere', slug, admin);
+    let title, content, image, previousImage, accepted;
+    if(admin){
+        accepted = true;
+    }else{
+        title = req.body.title
+        content = req.body.content
+        image = req.body.image
+        previousImage = req.body.previousImage
+    }
 
-    const story = await Story.findOne({slug : slug })
+    const story = await Story.findOne({slug : slug });
 
-    story.title = title ;
+if(admin){
+    story.accepted = true;
+}else{    story.title = title ;
     story.content = content ;
     story.image =   req.savedStoryImage ;
     story.accepted = false;
-
     if( !req.savedStoryImage) {
         // if the image is not sent
         story.image = image
@@ -161,6 +171,9 @@ const editStory  =asyncErrorWrapper(async(req,res,next)=>{
        deleteImageFile(req,previousImage)
 
     }
+}
+
+
 
     await story.save()  ;
 
