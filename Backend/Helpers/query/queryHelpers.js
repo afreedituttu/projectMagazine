@@ -20,7 +20,7 @@ const searchHelper = (searchKey, query, req) => {
 const paginateHelper = async (model ,query ,req)=> {
 
     const page = parseInt( req.query.page ) || 1 ; 
-    const pageSize = parseInt( req.query.limit ) || 6 ; 
+    const pageSize = parseInt( req.query.limit ) || 8 ; 
     const skip  = (page-1 ) * pageSize ; 
    
     const regex = new RegExp(req.query.search, "i")    

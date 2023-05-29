@@ -4,6 +4,7 @@ header {
     width: 100%;
     height: 95px;
     position: relative;
+    background: #0063a5;
 }
 
 header .averager {
@@ -19,9 +20,10 @@ header .averager {
 
 header .logo {
     text-decoration: none;
-    color: black;
+    /* color: black; */
     font-family: 'Staatliches', cursive;
-    color: #0063a5;
+    /* color: #0063a5; */
+    color: #fff;
 }
 
 header .logo h5 {
@@ -43,11 +45,13 @@ header .logo h5 {
     font-weight: bold;
     font-family: 'Saira Condensed', sans-serif;
     font-size: 1.2rem;
-    color: rgb(77, 77, 77);
+    /* color: rgb(77, 77, 77); */
+    color: #fff;
 }
 
 .addStory-link {
-    color: #0063a5 !important;
+    /* color: #0063a5 !important; */
+    color: #fff;
     border: #0063a5 solid 2px;
     padding: 4px 10px !important;
     margin-right: 2rem;
@@ -58,7 +62,8 @@ header .logo h5 {
 .register-link {
     border: #0063a5 solid 2px;
     border-radius: 4px;
-    color: #0063a5 !important;
+    color: #ffffff !important;
+    /* color: #fff; */
 }
 
 .search-form {
@@ -92,22 +97,26 @@ header .logo h5 {
     outline: none;
     border: none;
     padding-left: 0.9rem;
-    background-color: rgba(105, 113, 116, 0.1);
+    background-color: rgba(255, 255, 255, 0.704);
 }
 
 .search-form button {
+    background: #0063a5;
+    border-radius: 3px;
     position: absolute;
     border: none;
-    top: 25px;
+    top: 28px;
     right: 28px;
 }
 
 .search-form button.disBtn {
-    color: rgb(167, 164, 164);
+    /* color: rgb(167, 164, 164); */
+    color: #fff;
 }
 
 .search-form button.searchBtn {
-    color: #0063a5 !important;
+    /* color: #0063a5 !important; */
+    color: #fff;
 }
 
 .search-form button i {
@@ -161,7 +170,8 @@ header .logo h5 {
     text-decoration: none;
     font-family: 'Saira Condensed', sans-serif;
     font-size: 1.2rem;
-    color: #0063a5;
+    /* color: #0063a5; */
+    color: #fff;
     font-weight: 500;
 }
 
@@ -189,12 +199,14 @@ header .logo h5 {
     color: black;
     font-size: 2rem;
     margin-right: 1.8rem;
-    color: #024d80;
+    /* color: #024d80; */
+    color: #fff;
     position: relative;
 }
 
 .readList-link:hover {
-    color: #024d80;
+    /* color: #024d80; */
+    color: #fff;
 }
 
 #readListLength {
@@ -216,7 +228,8 @@ header .logo h5 {
 }
 .custom-btn{
     background: #fff;
-    color: #0063a5 !important;
+    /* color: #0063a5 !important; */
+    color: #fff;
     border: #0063a5 solid 2px;
     padding: 4px 10px !important;
     margin-right: 2rem;

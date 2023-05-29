@@ -119,7 +119,6 @@ const Story = ({ story, admin }) => {
                     }
                     </h5>
 
-
                     <p className="story-text"dangerouslySetInnerHTML={{__html : truncateContent( story.content) +"..."}}>
                         </p>
                     <p className="story-createdAt">{editDate(story.createdAt)} 
