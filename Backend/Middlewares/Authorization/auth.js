@@ -18,7 +18,7 @@ const getAccessToRoute = asyncErrorWrapper(async(req,res,next) =>{
 
     const decoded = jwt.verify(accessToken,JWT_SECRET_KEY) ;
 
-    const user = await User.findById(decoded.id)
+    const user = await User.findById({_id:decoded.id})
    
     if(!user) {
         return next(new CustomError("You are not authorized to access this route ", 401))
@@ -30,8 +30,27 @@ const getAccessToRoute = asyncErrorWrapper(async(req,res,next) =>{
 
 })
 
-const getAccessToAdminRoute = asyncErrorWrapper((req, res, next)=>{
-    //
+const getAccessToAdminRoute = asyncErrorWrapper(async(req, res, next)=>{
+    const {JWT_SECRET_KEY} =process.env ;
+
+    if(!isTokenIncluded(req)) {
+
+        return next(new CustomError("You are not authorized to access this route ", 401))
+    }
+
+    const accessToken = getAccessTokenFromHeader(req)
+
+    const decoded = jwt.verify(accessToken,JWT_SECRET_KEY) ;
+
+    const user = await User.findById({id:decoded.id, admin:true})
+   
+    if(!user) {
+        return next(new CustomError("You are not authorized to access this route ", 401))
+    }
+
+    req.user = user ; 
+
+    next()
 })
 
 

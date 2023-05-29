@@ -39,8 +39,13 @@ const addStory = asyncErrorWrapper(async  (req,res,next)=> {
 })
 
 const getAllStories = asyncErrorWrapper( async (req,res,next) =>{
-
-    let query = Story.find(); //accepted:true
+    const admin = req.query.admin;
+    let query;
+    if(admin){
+        query = Story.find({accepted:false});
+    }else{
+        query = Story.find({accepted:true});
+    }
 
     query =searchHelper("title",query,req)
 
@@ -144,6 +149,7 @@ const editStory  =asyncErrorWrapper(async(req,res,next)=>{
     story.title = title ;
     story.content = content ;
     story.image =   req.savedStoryImage ;
+    story.accepted = false;
 
     if( !req.savedStoryImage) {
         // if the image is not sent
