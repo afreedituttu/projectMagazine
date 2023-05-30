@@ -16,11 +16,11 @@ const getAccessTokenFromHeader = (req) => {
 
 const sendToken = (user,statusCode ,res)=>{
 
-    const token = user.generateJwtFromUser()
-
+    const {token, admin} = user.generateJwtFromUser()
     return res.status(statusCode).json({
         success: true ,
-        token
+        token,
+        isAdmin:admin
     })
 
 }

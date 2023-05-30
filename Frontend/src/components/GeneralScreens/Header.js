@@ -49,6 +49,9 @@ const Header = () => {
                         <div className="auth_options">
 
 
+                            <Link className='addStory-link' to="/home">Home</Link>
+                            <Link className='addStory-link' to="/">Magazines</Link>
+                            <Link className='addStory-link' to="/news">News</Link>
                             <Link className='addStory-link' to="/addstory"><RiPencilFill /> Add Magazine </Link>
 
 
@@ -71,7 +74,7 @@ const Header = () => {
 
 
                                 <div className="sub-profile-wrap  ">
-                                    <Link className='profile-link' to="/profile"  > <FaUserEdit />  Profile </Link>
+                                    <Link className='profile-link custom-profile' to="/profile"  > <FaUserEdit />  Profile </Link>
 
                                     <button className='logout-btn' onClick={handleLogout}> <BiLogOut />  Logout</button>
 
@@ -84,6 +87,10 @@ const Header = () => {
 
                         :
                         <div className="noAuth_options">
+                            <Link className='addStory-link' to="/home">Home</Link>
+                            <Link className='addStory-link' to="/">Magazines</Link>
+                            <Link className='addStory-link' to="/news">News</Link>
+
 
                             <Link className='login-link' to="/login"> Login </Link>
 

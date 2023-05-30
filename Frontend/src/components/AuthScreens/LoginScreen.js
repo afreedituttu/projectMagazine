@@ -18,10 +18,14 @@ const LoginScreen = () => {
         { email, password }
       );
       localStorage.setItem("authToken", data.token);
+      localStorage.setItem("isAdmin", data.isAdmin);
 
       setTimeout(() => {
-
-        navigate("/")
+        if(data.isAdmin){
+        navigate("/admin")
+        }else{
+          navigate("/")
+        }
 
       }, 1800)
 

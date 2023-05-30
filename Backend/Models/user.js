@@ -71,10 +71,12 @@ UserSchema.methods.generateJwtFromUser  = function(){
         username : this.username,
         email : this.email
     }
+    let admin;
+    if(this.role == "admin") admin = true;
 
     const token = jwt.sign(payload ,JWT_SECRET_KEY, {expiresIn :JWT_EXPIRE} )
 
-    return token 
+    return {token, admin} 
 }
 
 UserSchema.methods.getResetPasswordTokenFromUser =function(){

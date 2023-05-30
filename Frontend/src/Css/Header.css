@@ -8,7 +8,7 @@ header {
 }
 
 header .averager {
-    max-width: 1000px;
+    max-width: 1400px;
     width: 100%;
     height: 92px;
     border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
@@ -171,7 +171,7 @@ header .logo h5 {
     font-family: 'Saira Condensed', sans-serif;
     font-size: 1.2rem;
     /* color: #0063a5; */
-    color: #fff;
+    color: #373737;
     font-weight: 500;
 }
 
