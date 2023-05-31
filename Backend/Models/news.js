@@ -4,6 +4,14 @@ const NewsSchema = mongoose.Schema({
     title:{
         type:String,
         required:true
+    },
+    image:{
+        type:String,
+        default:'default.jpg'
+    },
+    desc:{
+        type:String,
+        required:true
     }
 })
 
