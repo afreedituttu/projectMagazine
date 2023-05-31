@@ -22,6 +22,7 @@ import AdminHeader from './components/Admin/AdminHeader'
 import AdminFooter from './components/Admin/AdminFooter'
 import AdminDetail from './components/Admin/AdminDetail';
 import MainHome from './components/GeneralScreens/MainHome';
+import News from './components/GeneralScreens/News';
 
 const App = () => {
 
@@ -40,6 +41,7 @@ const App = () => {
                                     </Route>
 
                                     <Route exact path="/home" element={<MainHome />} />
+                                    <Route exact path="/news" element={<News />} />
                                     <Route exact path="/story/:slug" element={<DetailStory />} />
                                     <Route exact path="/story/:slug/admin" element={<DetailStory admin="true" />} />
 
