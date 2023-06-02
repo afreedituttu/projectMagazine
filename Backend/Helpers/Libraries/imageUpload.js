@@ -26,9 +26,11 @@ const storage = multer.diskStorage({
             req.savedUserPhoto ="photo_user_" +req.user.id + "."+ extentions
 
             cb(null ,req.savedUserPhoto)
+            console.log('at photo');
         }
 
         else {
+            console.log('at image');
             req.savedStoryImage ="image_" +new Date().toISOString().replace(/:/g, '-') + file.originalname 
 
             cb(null ,req.savedStoryImage)
