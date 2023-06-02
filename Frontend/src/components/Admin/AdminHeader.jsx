@@ -41,6 +41,8 @@ const AdminHeader = () => {
               <div className='header_options'>
                 <div className="auth_options">
                   <Link className='addStory-link' to="/admin">HOME</Link>
+                  <Link className='addStory-link' to="/admin/news">News</Link>
+                  <Link className='addStory-link' to="/admin/addnews">Add News</Link>
                   <div className='header-profile-wrapper '>
                     <button className='addStory-link custom-btn' onClick={handleLogout}> <BiLogOut className='logoutLogo' />  Logout</button>
                   </div>

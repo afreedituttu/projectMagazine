@@ -23,6 +23,8 @@ import AdminFooter from './components/Admin/AdminFooter'
 import AdminDetail from './components/Admin/AdminDetail';
 import MainHome from './components/GeneralScreens/MainHome';
 import News from './components/GeneralScreens/News';
+import Addnews from './components/GeneralScreens/Addnews'
+import DeleteNews from './components/GeneralScreens/DeleteNews';
 
 const App = () => {
 
@@ -92,6 +94,8 @@ const App = () => {
                               <Route path='/admin' element={<AdminLayout />}>
 
                                     <Route exact path='/admin' element={<AdminHome />} />
+                                    <Route exact path='/admin/addnews' element={<Addnews />} />
+                                    <Route exact path='/admin/news' element={<DeleteNews />} />
 
                                     <Route exact path='/admin/login' element={<AdminLogin />} />
 

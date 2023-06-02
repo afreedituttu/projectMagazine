@@ -25,7 +25,7 @@ const Error = styled.div`
     padding:1rem 1rem;
 `
 
-const News = () => {
+const DeleteNews = () => {
     const [error, setError] = useState();
     const [newses, setNewses] = useState([]);
 
@@ -50,7 +50,7 @@ const News = () => {
         <CardWrapper>
         {
             newses.map((value)=>{
-                return <Carder title={value.title} desc={value.desc} image={`/storyImages/${value.image}`} />
+                return <Carder admin="true" id={value._id} title={value.title} desc={value.desc} image={`/storyImages/${value.image}`} />
             })
         }
         </CardWrapper>
@@ -58,4 +58,4 @@ const News = () => {
   )
 }
 
-export default News
+export default DeleteNews
