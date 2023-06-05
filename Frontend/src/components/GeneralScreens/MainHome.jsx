@@ -3,7 +3,7 @@ import {styled} from 'styled-components'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import News from './News';
-
+import '../../Css/deactivateA.css'
 const Wrapper = styled.div`
   width:100%;
   display:flex;
@@ -37,7 +37,7 @@ const Image = styled.img`
 `
 const ImageApp = styled.img`
   margin:2rem 0rem;
-  width:50%;
+  width:20%;
   text-align:center;
   box-shadow:0px 1px 5rem #f8f8f819;
   transition:all 0.5s ease;
@@ -85,7 +85,33 @@ const AppButton = styled.button`
   &:hover{
     background:#fff;
     color:#000;
+    border:1px solid #000;
     trasform:scale(1.1);
+  }
+`
+const Slider = styled.div`
+  padding: 0rem 10rem;
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  background: transparent;
+`
+const SliderContent = styled.div`
+  padding:1rem 2rem;
+  color:#000;
+  background: #fff;
+  ${'' /* border-right: 1px solid #444;
+  border-left: 1px solid #444; */}
+  border-bottom:3px solid #f34c40b2;
+  font-weight:500;
+  font-size:1.3rem;
+  transition: 0.2s ease;
+  display:block;
+
+  &:hover{
+    color:#fff;
+    background: #ef3737;
+    padding:1rem 2.5rem;
   }
 `
 const AppWrapper = styled.div``
@@ -93,23 +119,43 @@ const AppWrapper = styled.div``
 const MainHome = () => {
   return (
     <Wrapper>
+    <Slider>
+      <SliderContent>
+        <a href='http://mescet.ac.in/nss-technical-cell'>NSS</a>
+      </SliderContent>
+      <SliderContent>
+      <a href='http://mescet.ac.in/management'>MANAGEMENT</a>
+      </SliderContent>
+      <SliderContent>
+      <a href='http://mescet.ac.in/iedc'>IEDC</a>
+      </SliderContent>
+      <SliderContent>
+      <a href=''>TINKERCLUB</a>
+      </SliderContent>
+      <SliderContent>
+      <a href='http://mescet.ac.in/application-form'>SPORTS</a>
+      </SliderContent>
+      <SliderContent>
+      <a href='http://mescet.ac.in/association-club'>ARTS</a>
+      </SliderContent>
+    </Slider>
       <HomeHeader bg="fff" color="111">
         <Title color='111'>MES COLLEGE OF ENGINEERING AND TECHNOLOGY KUNNUKARA</Title>
         <div className='row'>
           <Image className='col-12 col-md-6 col-sm-6' src='http://mescet.ac.in/images/mescet-campus.jpg' />
           <HomeContent className='col-12 col-md-6 col-sm-6'>
-            lorem MES College of Engineering And Technology was established in the year 2011 by Muslim Educational Society(Regd). The college is situated on the banks of Periyar river in Kunnukara, North Paravur.The college is approved by AICTE and Govt. of Kerala is affiliated to APJ Abdul Kalam Technological University,Trivandrum. greigjjgirojgior iorgior oigr jgioj rio rig rio jogir goreogj rog orj goirjgor ojgoirejgoriegorj oog ro gorejg or gorj ogr rrrg regregrgr greggwgrg rhh h r wrt rw hrew hjj
+          MES College of Engineering And Technology was established in the year 2011 by Muslim Educational Society(Regd). The college is situated on the banks of Periyar river in Kunnukara, North Paravur.The college is approved by AICTE and Govt. of Kerala is affiliated to APJ Abdul Kalam Technological University,Trivandrum.
 
-            <Button bg="111"> Know more </Button>
+            <a href='http://mescet.ac.in/'><Button bg="111"> Know more </Button></a>
           </HomeContent>
         </div>
       </HomeHeader>
-      <HomeHeader bg="000" color="ffff">
-        <Title color='fff'>EZINE MAGAZINE WEBAPP</Title>
-        <ImageApp src='/storyImages/image_2023-05-31T18-11-15.000ZScreenshot (205).png'/>
-        <AppContent>rjes roej eoijewoif jewoifjeiojf oewjf ejfiewjfioejwoif ewoi jewoij oewjioew jdd o joejfoij fioe fiosf oie   foijeofjeoifjeoijf oiej ieojfoiejfoiesj foiejofoiejfoefoeskfoesj foiekf oie fjeosjfoief eoijf io oi iofj oi jo foejfesoifjeofjeosjfoiejfoejfiof eijfoiejf fefweijfej fefjiwejf iewjf iewjfioewjifoj ewoifjwiofjweoijfoiejoijeofiejw fje oijewoif jewoifjeiojf oewjf ejfiewjfioejwoif ewoi jewoij oewjioew jdd</AppContent>
+      <HomeHeader bg="efefef" color="111">
+        <Title color='000'>EZINE MAGAZINE WEBAPP</Title>
+        <ImageApp src='/storyImages/idea.png'/>
+        <AppContent>Ezine is a online platform for students at mes college of engineering and technology kunnukara. Here you can create and publish your own write up's and article's. Find and read your favorite intellectual and insipiring articles written by our college studens. Here we are presenting the THE EZINE</AppContent>
 
-        <AppButton bg="2b4eec">Explore Now</AppButton>
+        <a href='/'><AppButton bg="2b4eec">Explore Now</AppButton></a>
       </HomeHeader>
       <News />
     </Wrapper>

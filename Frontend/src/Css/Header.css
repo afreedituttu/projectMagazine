@@ -24,6 +24,7 @@ header .logo {
     font-family: 'Staatliches', cursive;
     /* color: #0063a5; */
     color: #fff;
+    display: flex;
 }
 
 header .logo h5 {
@@ -31,6 +32,14 @@ header .logo h5 {
     font-weight: bold;
     letter-spacing: 0.7px;
     margin-top: 3px;
+    padding-left: 5px;
+}
+
+header .meslogo{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
 }
 
 .header_options {
