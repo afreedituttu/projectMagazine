@@ -2,7 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import PrivateRoute from './components/Routing/PrivateRoute';
 import Home from "./components/GeneralScreens/Home"
+
 import LoginScreen from "./components/AuthScreens/LoginScreen"
+
 import RegisterScreen from "./components/AuthScreens/RegisterScreen"
 import ForgotPasswordScreen from "./components/AuthScreens/ForgotPasswordScreen"
 import ResetPasswordScreen from "./components/AuthScreens/ResetPasswordScreen"

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import {styled} from 'styled-components'
 
 const Card = styled.div`
-    width:80%;
+    width:90%;
     display:flex;
     border:1px solid #333;
     margin:1rem 0rem;
@@ -11,6 +11,10 @@ const Card = styled.div`
 const CardImage = styled.img`
     flex:2;
     width:10%;
+
+    @media (max-width:700px){
+        display:none;
+    }
 `
 const CardContent = styled.div`
     flex:8;

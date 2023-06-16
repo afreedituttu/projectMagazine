@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   flex-wrap:wrap;
   justify-content:center;
 
+@media (max-width:1001px){
+  
+}
 `
 const HomeHeader = styled.div`
   display:flex;
@@ -19,7 +22,7 @@ const HomeHeader = styled.div`
   margin: 0rem 0rem 0rem 0rem;
   background:#${(props)=>{return props.bg}};
   color:#${(props)=>{return props.color}};
-  padding:1rem 5rem;
+  padding:1rem 2rem;
 `
 const Title = styled.div`
   font-size:2rem;
@@ -90,11 +93,15 @@ const AppButton = styled.button`
   }
 `
 const Slider = styled.div`
-  padding: 0rem 10rem;
+  padding: 0rem 7%;
   display:flex;
   justify-content:space-between;
   width:100%;
   background: transparent;
+
+  @media (max-width:800px){
+    display:none
+  }
 `
 const SliderContent = styled.div`
   padding:1rem 2rem;
@@ -130,13 +137,10 @@ const MainHome = () => {
       <a href='http://mescet.ac.in/iedc'>IEDC</a>
       </SliderContent>
       <SliderContent>
-      <a href=''>TINKERCLUB</a>
+      <a href='http://mescet.ac.in/association-club'>ASSOCIATION & CLUBS</a>
       </SliderContent>
       <SliderContent>
-      <a href='http://mescet.ac.in/application-form'>SPORTS</a>
-      </SliderContent>
-      <SliderContent>
-      <a href='http://mescet.ac.in/association-club'>ARTS</a>
+      <a href='http://mescet.ac.in/'>GALLERY</a>
       </SliderContent>
     </Slider>
       <HomeHeader bg="fff" color="111">

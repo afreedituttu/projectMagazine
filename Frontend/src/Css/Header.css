@@ -14,6 +14,7 @@ header .averager {
     border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -47,6 +48,13 @@ header .meslogo{
     position: relative;
 }
 
+.auth_options{
+    display: flex;
+}
+.noAuth_options{
+    display: flex;
+}
+
 .header_options div.noAuth_options a,
 .header_options div.auth_options a.addStory-link {
     text-decoration: none;
@@ -65,7 +73,7 @@ header .meslogo{
     padding: 4px 10px !important;
     margin-right: 2rem;
     border-radius: 4px;
-    margin-top: 7px;
+    margin-top: 0px;
 }
 
 .register-link {

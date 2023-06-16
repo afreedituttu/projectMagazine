@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   width:100%;
   display:flex;
   justify-content:center;
-  padding:1rem 5rem;
+  padding:1rem 1rem;
 `
 const CardWrapper = styled.div`
     width:100%;

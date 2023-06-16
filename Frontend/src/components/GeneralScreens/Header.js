@@ -37,7 +37,7 @@ const Header = () => {
             <div className="averager">
 
                 <Link to="/" className="logo">
-                <img src='/storyImages/meslogo.jpg' className='meslogo' />
+                    <img src='/storyImages/meslogo.jpg' className='meslogo' />
                     <h5>
                         E-ZINE
 
@@ -53,7 +53,7 @@ const Header = () => {
                             <Link className='addStory-link' to="/home">Home</Link>
                             <Link className='addStory-link' to="/">Articles</Link>
                             <Link className='addStory-link' to="/news">News</Link>
-                            <Link className='addStory-link' to="/addstory"><RiPencilFill /> Add Magazine </Link>
+                            <Link className='addStory-link' to="/addstory"><RiPencilFill /> Add Article </Link>
 
 
                             <Link to="/readList" className='readList-link'>
